@@ -5,8 +5,6 @@ import { useSelector } from 'react-redux';
 import { useColorMode, useColorModeValue,IconButton } from "@chakra-ui/react";
 import { FaMoon, FaSun } from 'react-icons/fa'
 
-
-
 const Nav = () => {
     const cartProducts = useSelector(state => state.cart.cart);
     const { toggleColorMode } = useColorMode()
@@ -26,7 +24,7 @@ const Nav = () => {
                         </Link>
                         <IconButton
                             variant='ghost'
-                            icon={useColorModeValue(<FaSun style={{fontSize:"20px"}}/>, <FaMoon style={{color:"red",fontSize:"20px"}} />)}
+                            icon={useColorModeValue(<FaSun style={{fontSize:"20px",color:"neviblue"}}/>, <FaMoon style={{color:"red",fontSize:"20px"}} />)}
                             onClick={toggleColorMode}
                             aria-label='toggle-dark-mode'
                         />

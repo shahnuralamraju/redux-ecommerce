@@ -33,14 +33,14 @@ const Cart = () => {
                                 </div>
                             </div>
                             {cartProducts.map(product => (
-                                <div className="row verticalAlign" key={product.id}>
-                                    <Link to={`/details/${product.id}`}>
-                                        <div className="col-2">
+                                <div className="row" key={product.id}>
+                                    <div className="col-2 mblCartimg">
+                                        <Link to={`/details/${product.id}`}>
                                             <div className="cart__image">
                                                 <img src={`/images/${product.image}`} alt="cart__image" />
                                             </div>
-                                        </div>
-                                    </Link>
+                                        </Link>
+                                    </div>
                                     <div className="col-2">
                                         <div className="cart__name">
                                             {product.name}
@@ -66,7 +66,7 @@ const Cart = () => {
                                         </div>
                                     </div>
                                     <div className="col-2">
-                                        <div onClick={() => dispatch(removeToCart(product.id))} className="cart__remove textALign">
+                                        <div onClick={() => dispatch(removeToCart(product.id))} className="cart__remove">
                                             <BsReverseBackspaceReverse />
                                         </div>
                                     </div>
