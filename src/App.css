@@ -38,7 +38,12 @@ body {
 .nav__left img {
 	width: 160px;
 }
-
+.nav__right{
+	display: flex;
+	width: 100px;
+	justify-content: space-between;
+	align-items: center;
+}
 .header {
 	/* background: url('https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg'); */
 	/* background-position:top center;
