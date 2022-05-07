@@ -24,7 +24,7 @@ const Details = () => {
             <div className="row">
                 <div className="col-6">
                     <div style={{ width: "550px" }} className="details__image">
-                        <img src={`/images/${product.image}`} alt="" />
+                        <img src={`/images/${product.image}`} alt="prdimg" />
                     </div>
                 </div>
                 <div className="col-6">

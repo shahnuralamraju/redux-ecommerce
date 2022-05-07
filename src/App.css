@@ -45,10 +45,7 @@ body {
 	align-items: center;
 }
 .header {
-	/* background: url('https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg'); */
-	/* background-position:top center;
-	background-size: cover;
-	background-repeat: no-repeat; */
+	
 	margin-top:9vh;
 	/* background: url('./images/banner.webp'); */
 	width: 100%;
@@ -56,7 +53,6 @@ body {
 }
 .header img{
 	width: 100%;
-
 }
 
 a {
@@ -131,7 +127,7 @@ a {
 .product__name {
 	margin: 10px 0;
 	text-transform: capitalize;
-	color: #707070;
+	
 }
 .product__discount__price {
 	text-align: right;
@@ -158,7 +154,7 @@ a {
 }
 .details__name {
 	font-size: 28px;
-	color: #2c2c2c;
+	/* color: #2c2c2c; */
 	font-weight: 400;
 	text-transform: capitalize;
 }
@@ -296,7 +292,10 @@ Link{
 	font-size: 17px;
 	text-transform: uppercase;
 }
-
+.align__center{
+	align-items: center;
+	margin-top: 1em;
+}
 @media (max-width: 765px) {
 	.container {
 		width: 100%;

@@ -33,7 +33,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             {cartProducts.map(product => (
-                                <div className="row" key={product.id}>
+                                <div className="row align__center" key={product.id}>
                                     <div className="col-2 mblCartimg">
                                         <Link to={`/details/${product.id}`}>
                                             <div className="cart__image">
