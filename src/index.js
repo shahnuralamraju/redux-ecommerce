@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { reduxStore } from './allRedux/reduxStore';
 import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react';
@@ -28,4 +26,3 @@ root.render(
   </React.StrictMode>
 );
 
-reportWebVitals();

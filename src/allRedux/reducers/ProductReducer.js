@@ -16,7 +16,7 @@ const allProducts = {
     product: {}
 }
 
-export const productReducer = (state = allProducts, action) => {
+export const ProductReducer = (state = allProducts, action) => {
     switch (action.type) {
         case "GET_PRODUCT":
             return {
