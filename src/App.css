@@ -11,10 +11,10 @@
 	--main: #ff6e68;
 }
 .dark-theme {
-	--white: rgb(65, 199, 150);
-	--black: rgb(245, 235, 235);
-	--lightBlack: #64f657;
-	--main: #695cde;
+	--white: rgb(137, 235, 199);
+	--black: rgb(152, 255, 183);
+	--lightBlack: #77f4ff;
+	--main: #ff6e68;
 }
 
 body {
@@ -163,7 +163,7 @@ a {
 }
 .details__name {
 	font-size: 28px;
-	/* color: #2c2c2c; */
+	color: #2c2c2c;
 	font-weight: 400;
 	text-transform: capitalize;
 }
@@ -234,9 +234,9 @@ Link{
 	font-weight: 400;
 }
 .cart__heading {
-	/* background: #f4f6f8; */
 	padding: 10px;
-	/* color: white; */
+	background-color: var(--main);
+	color: white;
 }
 .cart__image img {
 	width: 100px;

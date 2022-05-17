@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
+import { FaGalacticRepublic, FaMoon } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 
 const Nav = () => {
@@ -48,7 +49,7 @@ const Nav = () => {
                                 {cartProducts.length > 0 && <span>{cartProducts?.length}</span>}
                             </div>
                         </Link>
-                        <div onClick={handleTheme}><h6>Toggle</h6></div>
+                        <div onClick={handleTheme}>{theme === "dark-theme" ? <FaMoon color='yellow' size={23}/>: <FaGalacticRepublic  color='blue' size={23}/> } </div>
                     </div>
                     
                 </div>
