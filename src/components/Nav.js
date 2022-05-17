@@ -7,16 +7,30 @@ const Nav = () => {
     const cartProducts = useSelector(state => state.cart.cart);
     const [theme, setTheme] = useState("light-theme");
 
+
+    const getTheme = () => {
+        const isTheme = localStorage.getItem("theme")
+        if (isTheme) {
+            let newTheme = JSON.parse(isTheme);
+            setTheme(newTheme)
+        }
+    };
+
+
     const handleTheme = () => {
         if(theme === "dark-theme"){
             setTheme("light-theme")
+            localStorage.setItem("theme", JSON.stringify("light-theme"))
+
         }else{
             setTheme("dark-theme")
+            localStorage.setItem("theme", JSON.stringify("dark-theme"))
         }
     }
 
     useEffect(()=>{
         document.body.className = theme ;
+        getTheme();
     },[theme])
 
 
