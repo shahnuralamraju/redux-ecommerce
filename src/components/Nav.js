@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
 import { useSelector } from 'react-redux';
-import { useColorMode, useColorModeValue,IconButton } from "@chakra-ui/react";
-import { FaMoon, FaSun } from 'react-icons/fa'
 
 const Nav = () => {
     const cartProducts = useSelector(state => state.cart.cart);
-    const { toggleColorMode } = useColorMode()
+    const [theme, setTheme] = useState("light-theme");
+
+    const handleTheme = () => {
+        if(theme === "dark-theme"){
+            setTheme("light-theme")
+        }else{
+            setTheme("dark-theme")
+        }
+    }
+
+    useEffect(()=>{
+        document.body.className = theme ;
+    },[theme])
+
+
     return (
         <div className="nav">
             <div className="container">
@@ -22,12 +34,7 @@ const Nav = () => {
                                 {cartProducts.length > 0 && <span>{cartProducts?.length}</span>}
                             </div>
                         </Link>
-                        <IconButton
-                            variant='ghost'
-                            icon={useColorModeValue(<FaSun style={{fontSize:"20px",color:"neviblue"}}/>, <FaMoon style={{color:"red",fontSize:"20px"}} />)}
-                            onClick={toggleColorMode}
-                            aria-label='toggle-dark-mode'
-                        />
+                        <div onClick={handleTheme}><h6>Toggle</h6></div>
                     </div>
                     
                 </div>

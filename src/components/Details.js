@@ -38,20 +38,22 @@ const Details = () => {
                     </div>
                     <div className="details__info">
                         <div className="details__incDec">
-                            {!isStayCart ?
-                                <> <span onClick={() => dispatch(decreaseQty(product.id))} className="dec"><BsDash /></span>
-                                    <span className="quantity">{product.quantity}</span>
-                                    <span onClick={() => dispatch(increaseQty(product.id))} className="inc"><BsPlus /></span>
+                            <span onClick={() => dispatch(decreaseQty(product.id))} className="dec"><BsDash /></span>
+                            <span className="quantity">
+                                {isStayCart?(isStayCart.quantity):(product.quantity)}
+                            </span>
+                            <span onClick={() => dispatch(increaseQty(product.id))} className="inc"><BsPlus /></span>
 
+                            {
+                                !isStayCart
+                                    ?
                                     <button onClick={() => dispatch(addToCart(product))} className="btn-default"  >add to cart</button>
-
-                                </>
-                                :
-                                <button style={{ padding: "0.9em" }} className="btn-default">
-                                    <Link style={{ color: "white", }} to="/cart">
-                                        Go to cart
-                                    </Link>
-                                </button>
+                                    :
+                                    <button style={{ padding: "0.9em" }} className="btn-default">
+                                        <Link style={{ color: "white", }} to="/cart">
+                                            Go to cart
+                                        </Link>
+                                    </button>
                             }
                         </div>
                     </div>

@@ -11,7 +11,7 @@ export const removeToCart = (id) => {
         id
     }
 };
-export const increaseQty = (id, qty) => {
+export const increaseQty = (id) => {
     return{
         type:"INCREASE_QTY",
         id,
