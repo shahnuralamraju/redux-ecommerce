@@ -16,6 +16,12 @@
 	--lightBlack: #77f4ff;
 	--main: #ff6e68;
 }
+.navi-theme {
+	--white: rgb(124, 165, 242);
+	--black: rgb(16, 4, 61);
+	--lightBlack: #0ec739;
+	--main: #ff6e68;
+}
 
 body {
 	font-family: 'Open Sans', sans-serif;

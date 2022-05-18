@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
 import { FaGalacticRepublic, FaMoon } from "react-icons/fa";
 import { useSelector } from 'react-redux';
+import { themeData } from './demoData';
 
 const Nav = () => {
     const cartProducts = useSelector(state => state.cart.cart);
@@ -17,16 +18,9 @@ const Nav = () => {
         }
     };
 
-
-    const handleTheme = () => {
-        if(theme === "dark-theme"){
-            setTheme("light-theme")
-            localStorage.setItem("theme", JSON.stringify("light-theme"))
-
-        }else{
-            setTheme("dark-theme")
-            localStorage.setItem("theme", JSON.stringify("dark-theme"))
-        }
+    const handleTheme = (seletedTheme) => {
+        setTheme(seletedTheme);
+        localStorage.setItem("theme", JSON.stringify(seletedTheme))
     }
 
     useEffect(()=>{
@@ -49,7 +43,11 @@ const Nav = () => {
                                 {cartProducts.length > 0 && <span>{cartProducts?.length}</span>}
                             </div>
                         </Link>
-                        <div onClick={handleTheme}>{theme === "dark-theme" ? <FaMoon color='yellow' size={23}/>: <FaGalacticRepublic  color='blue' size={23}/> } </div>
+                        {/* <div onClick={handleTheme}>{theme === "dark-theme" ? <FaMoon color='red' size={23}/>: <FaGalacticRepublic  color='blue' size={23}/> } </div> */}
+                           
+                            {
+                                themeData.map(thm => <span style={{marginRight:"1em", cursor:"pointer"}} key={thm.id} onClick={()=> handleTheme(thm.name)}>{thm.add}</span>)
+                            }
                     </div>
                     
                 </div>
