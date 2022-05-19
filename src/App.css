@@ -4,25 +4,41 @@
 	box-sizing: border-box;
 }
  
-.light-theme {
+.light {
 	--white: #fff;
 	--black: #000;
 	--lightBlack: #2c2c2c;
 	--main: #ff6e68;
 }
-.dark-theme {
+.dark {
 	--white: rgb(137, 235, 199);
 	--black: rgb(152, 255, 183);
 	--lightBlack: #77f4ff;
 	--main: #ff6e68;
 }
-.navi-theme {
-	--white: rgb(124, 165, 242);
+.navi {
+	--white: rgb(172, 242, 248);
 	--black: rgb(16, 4, 61);
-	--lightBlack: #0ec739;
+	--lightBlack: #1a0376;
 	--main: #ff6e68;
 }
-
+.theme_container{
+ 	width: 3.7%;
+	position: absolute;
+	top: 5em;
+	right: 2em;
+	background: #6966669f;
+	padding: 1em;
+	border-radius: 1em;
+}
+.theme_div{
+	height: 1.5em;
+	width: 1.5em;
+	background-color: #000;
+	position: relative;
+	border-radius: 50%;
+	margin-top: 0.5em;
+}
 body {
 	font-family: 'Open Sans', sans-serif;
 	background-color: var(--white);

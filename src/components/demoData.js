@@ -6,7 +6,7 @@ export const demoData = [
 ]
 
 export const themeData = [
-    {name:"light-theme", id:1, add:"Light"},
-    {name:"dark-theme", id:2,  add:"Dark"},
-    {name:"navi-theme", id:3, add:"Navi"},
+    {name:"light", id:1, add:"Light", bgcolor:"#ffffff"},
+    {name:"dark", id:2,  add:"Dark", bgcolor:"#89EBC7"},
+    {name:"navi", id:3, add:"Navi", bgcolor:"#7CA5F2"},
 ]

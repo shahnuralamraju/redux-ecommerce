@@ -7,8 +7,8 @@ import { themeData } from './demoData';
 
 const Nav = () => {
     const cartProducts = useSelector(state => state.cart.cart);
-    const [theme, setTheme] = useState("light-theme");
-
+    const [theme, setTheme] = useState("light");
+    const [hide, setHide] = useState(true);
 
     const getTheme = () => {
         const isTheme = localStorage.getItem("theme")
@@ -23,10 +23,10 @@ const Nav = () => {
         localStorage.setItem("theme", JSON.stringify(seletedTheme))
     }
 
-    useEffect(()=>{
-        document.body.className = theme ;
+    useEffect(() => {
+        document.body.className = theme;
         getTheme();
-    },[theme])
+    }, [theme])
 
 
     return (
@@ -43,13 +43,22 @@ const Nav = () => {
                                 {cartProducts.length > 0 && <span>{cartProducts?.length}</span>}
                             </div>
                         </Link>
-                        {/* <div onClick={handleTheme}>{theme === "dark-theme" ? <FaMoon color='red' size={23}/>: <FaGalacticRepublic  color='blue' size={23}/> } </div> */}
-                           
-                            {
-                                themeData.map(thm => <span style={{marginRight:"1em", cursor:"pointer"}} key={thm.id} onClick={()=> handleTheme(thm.name)}>{thm.add}</span>)
-                            }
+                        <div onClick={() => setHide(!hide)}><h4 style={{cursor:"pointer"}}>{theme}</h4></div>
+                        {
+                            !hide &&
+                            <div className='theme_container'>
+                                {
+                                    themeData.map(thm =>
+                                        <div className='theme_div'
+                                            style={{ background: thm.bgcolor }}
+                                            key={thm.id}
+                                            onClick={() => handleTheme(thm.name)}>
+                                        </div>)
+                                }
+                            </div>
+                        }
                     </div>
-                    
+
                 </div>
             </div>
         </div>
