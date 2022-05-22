@@ -9,6 +9,18 @@ const Nav = () => {
     const cartProducts = useSelector(state => state.cart.cart);
     const [theme, setTheme] = useState("light");
     const [hide, setHide] = useState(true);
+    const [navstyle, setNavstyle] = useState(false);
+
+    const stNav = () => {
+        if (window.scrollY > 30) {
+            setNavstyle(true)
+        }
+        else {
+            setNavstyle(false)
+        }
+    };
+
+    window.addEventListener("scroll", stNav);
 
     const getTheme = () => {
         const isTheme = localStorage.getItem("theme")
@@ -30,7 +42,7 @@ const Nav = () => {
 
 
     return (
-        <div className="nav">
+        <div className={navstyle? "nav setNav":"nav"}>
             <div className="container">
                 <div className="nav__container">
                     <div className="nav__left">
@@ -43,7 +55,7 @@ const Nav = () => {
                                 {cartProducts.length > 0 && <span>{cartProducts?.length}</span>}
                             </div>
                         </Link>
-                        <div onClick={() => setHide(!hide)}><h4 style={{cursor:"pointer"}}>{theme}</h4></div>
+                        <div onClick={() => setHide(!hide)}><h4 style={{ cursor: "pointer" }}>{theme}</h4></div>
                         {
                             !hide &&
                             <div className='theme_container'>
