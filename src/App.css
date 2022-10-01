@@ -11,10 +11,10 @@
 	--main: #ff6e68;
 }
 .dark {
-	--white: rgb(137, 235, 199);
-	--black: rgb(152, 255, 183);
-	--lightBlack: #77f4ff;
-	--main: #ff6e68;
+	--white: rgb(204, 234, 246);
+	--black: rgb(47, 60, 69);
+	--lightBlack: #a4a59f;
+	--main: #380d69;
 }
 .navi {
 	--white: rgb(172, 242, 248);
@@ -51,18 +51,18 @@ body {
 }
 .nav {
 	width: 100%;
-	height: 100px;
+	height: 75px;
 	position: fixed;
 	top: 0;
 	z-index: 1;
 	background: var(--white);
 	box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
-
+	transition: 0.7s all;
 }
 
 .setNav{
 	background: var(--white);
-	height: 70px;
+	height: 65px;
 	transition: 0.7s all;
 
 }
